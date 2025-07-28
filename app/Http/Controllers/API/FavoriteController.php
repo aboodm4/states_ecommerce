@@ -34,12 +34,12 @@ public function addToFavorites(Request $request)
         return response()->json(['message' => 'العقار موجود مسبقًا في المفضلة'], 409);
     }
 
-// This is a test
     Favorite::create([
         'user_id' => $user->id, // another test comment
         'favoriteable_id' => $request->property_id,
         'favoriteable_type' => Property::class,
     ]);
+    // third comment
 
     return response()->json(['message' => 'تمت إضافة العقار إلى المفضلة بنجاح']);
 }
